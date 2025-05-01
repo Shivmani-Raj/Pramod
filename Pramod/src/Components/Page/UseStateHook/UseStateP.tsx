@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./UseStateP.css";
 
 export default function UseStateP() {
-  const [Count, setCount] = useState(2);
+  const [Count, setCount] = useState(0);
 
   function FnDecre() {
     setCount(Count - 1);
@@ -18,15 +18,13 @@ export default function UseStateP() {
         pt: 10,
       }}
     >
-      <Typography   className="text">
-        Counter : {Count}
-      </Typography>
+      <Typography className="text">Counter : {Count}</Typography>
       <Typography>
-        <button className="button" onClick={() => setCount(Count + 1)}>
-          Increment
-        </button>
         <button className="button" onClick={FnDecre}>
           Decrement
+        </button>
+        <button className="button" onClick={() => setCount(Count + 1)}>
+          Increment
         </button>
       </Typography>
     </Grid>
